@@ -5,7 +5,7 @@ library(readxl)
 library(dbplyr)
 library(glue)
 
-setwd("C:/Users/LIU/Desktop/trade_record/") #設定路徑資料夾
+setwd("C:/Users/LIU/Desktop/analy/trade_record/") #設定路徑資料夾
 
 #迴圈:一次讀取多個檔案
 
@@ -53,7 +53,7 @@ ana <- df %>%
 
   ggplot(ana) +                                  #ggplot(data名稱)，以+號連結不同圖層
   geom_histogram(aes(count)) +                   #畫直方圖_aes(x軸=名稱,y軸=名稱)
-  facet_wrap(.~iss, scales='free_y')+              #facet_wrap將圖纏繞分面(一頁多圖)，並依iss進行數據分類
+  facet_wrap(.~iss, scales='free_y')+            #facet_wrap將圖纏繞分面(一頁多圖)，並依iss進行數據分類
   theme_bw() +                                   #ggplot主題模板
   labs(x='某檔權證交易次數',title='各券商權證的交易次數')
   ggsave('各券商權證的交易次數.png', width=40, height=20, units='cm') #保存繪圖形式
