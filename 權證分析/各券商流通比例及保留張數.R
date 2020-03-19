@@ -1,8 +1,9 @@
 library(tidyverse)
 library(data.table)              #用來讀取大型資料配合函數"fread"
 library(ggplot2)
+library(dplyr)
 
-setwd("C:/Users/LIU/Desktop/")   #設定路徑資料夾
+setwd("C:/Users/LIU/Desktop/analy")   #設定路徑資料夾
 
 df <- fread('w_outstanding.csv') #fread("檔案名稱")
 df <- df %>%
