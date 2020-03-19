@@ -5,7 +5,7 @@ library(dplyr)
 
 setwd("C:/Users/LIU/Desktop/analy")   #設定路徑資料夾
 
-df <- fread('w_outstanding.csv') #fread("檔案名稱")
+df <- fread('C:/Users/LIU/Desktop/analy/w_outstanding.csv') #fread("檔案名稱")
 df <- df %>%
     filter(allv>0) %>%                             #首先先篩選出allv(發行張數)>0的數據
     mutate(outv=ifelse(outv>allv, allv, outv)) %>% #新增欄位，名稱:outv，條件(若賣出張數>發行張數，取發行張數，否，則取賣出張數)
